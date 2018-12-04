@@ -9,7 +9,7 @@
 :- use_module(library(clpfd)).
 
 % Sample puzzle.
-puzzle(1, [[_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+puzzle_25([[_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
            [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
            [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
            [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
@@ -35,12 +35,58 @@ puzzle(1, [[_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
            [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
            [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_]]).
 
+puzzle_9([[_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_]]).
+
+
+puzzle_25_a([[1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,4,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,16,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,25,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,17,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_],
+           [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_]]).
+
+puzzle_9_a([[_,_,_,_,_,5,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,6,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [8,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,9]]).
 
 % Puzzle is represented by a list of lists, so individual cells are identified
 % by (row, column) coordinates; rows are letters, columns are numbers.
 
 % sudoku_clpfd: takes a puzzle and returns solutions using clpfd
-sudoku_clpfd(Puzzle) :-
+sudoku_clpfd_25(Puzzle) :-
     flatten(Puzzle, Dom),
     Dom ins 1..25,
     Rows = Puzzle,
@@ -54,53 +100,21 @@ sudoku_clpfd(Puzzle) :-
     subsquare(P, Q, R, S, T),
     subsquare(U, V, W, X, Y),
     maplist(label, Rows).
+    maplist(writef, Rows).
 
-% sudoku_clpfd_n: takes a puzzle and the number of rows in that puzzle and returns solution using clpfd
-sudoku_clpfd_n(Puzzle) :-
-    % length(Puzzle, N),
-    N = 25,
+sudoku_clpfd_9(Puzzle) :-
     flatten(Puzzle, Dom),
-    Dom ins 1..25,
+    Dom ins 1..9,
     Rows = Puzzle,
     maplist(all_distinct, Rows),
     transpose(Rows, Columns),
     maplist(all_distinct, Columns),
-    Rows = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y],
-    subsquare(A, B, C, D, E),
-    subsquare(F, G, H, I, J),
-    subsquare(K, L, M, N, O),
-    subsquare(P, Q, R, S, T),
-    subsquare(U, V, W, X, Y),
+    Rows = [AA, BB, CC, DD, EE, FF, GG, HH, II],
+    subsquare(AA, BB, CC),
+    subsquare(DD, EE, FF),
+    subsquare(GG, HH, II),
     maplist(label, Rows).
-
-% create_subsquares: takes a list of indices, rows and the root of the length to create subsquares of appropriate size
-create_subsquares([], Rows, Root).
-create_subsquares([H|T], Rows, Root) :-
-    Indexes = Root**(H - 1)..Root**H,
-    create_subrows(Indexes, Rows, Subrows),
-    subsquare(Subrows),
-    create_subsquares(T, Rows, Root).
-
-% create_subrows: adds the next subrow to the list of subrows
-create_subrows([], Rows, Subrows).
-create_subrows([H|T], Rows, Subrows) :-
-    nth1(H, Rows, Row),
-    create_subrows(T, Rows, [Subrows|Row]).
-
-% sudoku_bf: takes a puzzle and returns solutions using brute-force, pure Prolog
-sudoku_bf(Puzzle) :-
-    flatten(Puzzle, Dom),
-    in_domain(Dom, 1..25),
-    Rows = Puzzle,
-    maplist(check_distinct, Rows),
-    transpose(Rows, Columns),
-    maplist(check_distinct, Columns),
-    Rows = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y],
-    subsquare_bf(A, B, C, D, E),
-    subsquare_bf(F, G, H, I, J),
-    subsquare_bf(K, L, M, N, O),
-    subsquare_bf(P, Q, R, S, T),
-    subsquare_bf(U, V, W, X, Y).
+    maplist(portray_clause, [AA, BB, CC, DD, EE, FF, GG, HH, II]).
 
 
 % subsquare: takes one puzzle, returns a number of subsquares equal to the
@@ -117,34 +131,11 @@ subsquare([A1,A2,A3,A4,A5|Ar],
                                  D1,D2,D3,D4,D5,
                                  E1,E2,E3,E4,E5]),
                     subsquare(Ar,Br,Cr,Dr,Er).
-
-
-% subsquare_bf: brute force implementation of subsquare
-subsquare_bf([],[],[],[],[]).
-subsquare_bf([A1,A2,A3,A4,A5|Ar],
-          [B1,B2,B3,B4,B5|Br],
-          [C1,C2,C3,C4,C5|Cr],
-          [D1,D2,D3,D4,D5|Dr],
-          [E1,E2,E3,E4,E5|Er]) :-
-                    check_distinct([A1,A2,A3,A4,A5,
-                                    B1,B2,B3,B4,B5,
-                                    C1,C2,C3,C4,C5,
-                                    D1,D2,D3,D4,D5,
-                                    E1,E2,E3,E4,E5]),
-                    subsquare(Ar,Br,Cr,Dr,Er).
-
-
-% check_distinct: takes a list and checks that all elements in the list are distinct
-check_distinct(Lst) :-
-    sort(Lst, Sorted),
-    length(Lst, OriginalLength),
-    length(Sorted, SortedLength),
-    OriginalLength == SortedLength.
-
-
-% in_domain: checks that all elements of L1 are in L2
-in_domain(L1, L2) :- maplist(part_of(L2), L1).
-
-
-% part_of: inverses the member relationship so it works with maplist in in_domain
-part_of(Lst, Elem) :- member(Elem, Lst).
+subsquare([],[],[]).
+subsquare([A1,A2,A3|Ar],
+          [B1,B2,B3|Br],
+          [C1,C2,C3|Cr]) :-
+                    all_distinct([A1,A2,A3,
+                                 B1,B2,B3,
+                                 C1,C2,C3]),
+                    subsquare(Ar,Br,Cr).
