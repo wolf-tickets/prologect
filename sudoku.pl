@@ -55,17 +55,22 @@ sudoku_clpfd(Puzzle) :-
     subsquare(U, V, W, X, Y),
     maplist(label, Rows).
 
-% sudoku_clpfd: takes a puzzle and the number of rows in that puzzle and returns solution using clpfd
-sudoku_clpfd(Puzzle, N) :-
+% sudoku_clpfd_n: takes a puzzle and the number of rows in that puzzle and returns solution using clpfd
+sudoku_clpfd_n(Puzzle) :-
+    % length(Puzzle, N),
+    N = 25,
     flatten(Puzzle, Dom),
-    Dom ins 1..N,
+    Dom ins 1..25,
     Rows = Puzzle,
     maplist(all_distinct, Rows),
     transpose(Rows, Columns),
     maplist(all_distinct, Columns),
-    Root = sqrt(N),
-    Squares = 1..Root,
-    create_subsquares(Squares, Rows, Root),
+    Rows = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y],
+    subsquare(A, B, C, D, E),
+    subsquare(F, G, H, I, J),
+    subsquare(K, L, M, N, O),
+    subsquare(P, Q, R, S, T),
+    subsquare(U, V, W, X, Y),
     maplist(label, Rows).
 
 % create_subsquares: takes a list of indices, rows and the root of the length to create subsquares of appropriate size
