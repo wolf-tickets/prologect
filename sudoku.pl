@@ -55,6 +55,33 @@ sudoku_clpfd(Puzzle) :-
     subsquare(U, V, W, X, Y),
     maplist(label, Rows).
 
+% sudoku_clpfd: takes a puzzle and the number of rows in that puzzle and returns solution using clpfd
+sudoku_clpfd(Puzzle, N) :-
+    flatten(Puzzle, Dom),
+    Dom ins 1..N,
+    Rows = Puzzle,
+    maplist(all_distinct, Rows),
+    transpose(Rows, Columns),
+    maplist(all_distinct, Columns),
+    Root = sqrt(N),
+    Squares = 1..Root,
+    create_subsquares(Squares, Rows, Root),
+    maplist(label, Rows).
+
+% create_subsquares: takes a list of indices, rows and the root of the length to create subsquares of appropriate size
+create_subsquares([], Rows, Root).
+create_subsquares([H|T], Rows, Root) :-
+    Indexes = Root**(H - 1)..Root**H,
+    create_subrows(Indexes, Rows, Subrows),
+    subsquare(Subrows),
+    create_subsquares(T, Rows, Root).
+
+% create_subrows: adds the next subrow to the list of subrows
+create_subrows([], Rows, Subrows).
+create_subrows([H|T], Rows, Subrows) :-
+    nth1(H, Rows, Row),
+    create_subrows(T, Rows, [Subrows|Row]).
+
 % sudoku_bf: takes a puzzle and returns solutions using brute-force, pure Prolog
 sudoku_bf(Puzzle) :-
     flatten(Puzzle, Dom),
