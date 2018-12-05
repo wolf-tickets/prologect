@@ -1,8 +1,7 @@
 % CPSC 312 - Project #2 (Prolog)
-% Sudoku solver for 25x25 puzzles
+% Sudoku solver for 9x9 and 25x25 puzzles
 % (TODO? extend to  arbitrary square dimensions)
-% Two implementations - one using a defined finite domain and constraint logic
-% via the clpfd module, and one "brute force" implementation using pure prolog.
+% Implementation uses a defined finite domain and constraint logic via the clpfd module
 
 
 % Import constraint logic module for clpfd implementation
@@ -139,3 +138,12 @@ subsquare([A1,A2,A3|Ar],
                                  B1,B2,B3,
                                  C1,C2,C3]),
                     subsquare(Ar,Br,Cr).
+
+
+% solves the puzzle and prints it.
+solveAndPrint_9(P) :- sudoku_clpfd_9(P), printGrid(P).
+solveAndPrint_25(P) :- sudoku_clpfd_25(P), printGrid(P).
+
+% helper procedure to print out each row on a separate line.
+printGrid([]).
+printGrid([H|T]) :- portray_clause(H), printGrid(T).
