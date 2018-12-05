@@ -80,6 +80,24 @@ puzzle_9_a([[_,_,_,_,_,5,_,_,_],
             [_,_,_,_,_,_,_,_,_],
             [8,_,_,_,_,_,_,_,_],
             [_,_,_,_,_,_,_,_,9]]).
+puzzle_9_b([[_,_,_,_,_,5,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,6,_,_,_,2],
+            [_,_,8,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,1,_,_,_],
+            [8,_,_,_,_,_,_,_,_],
+            [_,_,_,_,_,_,_,_,9]]).
+todays_puzzle([[_,_,_,_,9,_,_,2,3],
+               [_,_,_,1,_,_,_,6,_],
+               [6,4,5,_,8,_,_,_,_],
+               [_,_,_,5,_,_,7,9,1],
+               [_,_,_,_,_,_,_,_,_],
+               [8,2,1,_,_,7,_,_,_],
+               [_,_,_,_,5,_,3,1,7],
+               [_,1,_,_,_,4,_,_,_],
+               [7,8,_,_,3,_,_,_,_]]).
 
 % Puzzle is represented by a list of lists, so individual cells are identified
 % by (row, column) coordinates; rows are letters, columns are numbers.
@@ -141,9 +159,9 @@ subsquare([A1,A2,A3|Ar],
 
 
 % solves the puzzle and prints it.
-solveAndPrint_9(P) :- sudoku_clpfd_9(P), printGrid(P).
-solveAndPrint_25(P) :- sudoku_clpfd_25(P), printGrid(P).
+solve_and_print_9(P) :- sudoku_clpfd_9(P), print_grid(P).
+solve_and_print_25(P) :- sudoku_clpfd_25(P), print_grid(P).
 
 % helper procedure to print out each row on a separate line.
-printGrid([]).
-printGrid([H|T]) :- portray_clause(H), printGrid(T).
+print_grid([]).
+print_grid([H|T]) :- portray_clause(H), print_grid(T).
